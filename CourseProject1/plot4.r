@@ -1,4 +1,4 @@
-file<- suppress.Warngings(fread("household_power_consumption.txt", sep=";", na.strings="?", stringsAsFactors=FALSE))
+file<- suppressWarnings(fread("household_power_consumption.txt", sep=";", na.strings="?", stringsAsFactors=FALSE))
     data<-file[file$Date=="1/2/2007",]
       ##1440 Observations
     data<-rbind(data,file[file$Date=="2/2/2007",])
@@ -14,5 +14,5 @@ par(cex=.7)
       plot(data$dates, data$Sub_metering_1, type= "l", xlab=" ", ylab="Engery sub metering")
             lines(data$dates, data$Sub_metering_2, type= "l", xlab=" ", ylab="Engery sub metering", col="red")
             lines(data$dates, data$Sub_metering_3, type= "l", xlab=" ", ylab="Engery sub metering", col="blue")
-         legend("topright", legend=c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), lty=c(1,1,1), col=c("black","red", "blue"), cex=.85, bty="n")
+         legend("topright", legend=c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), lty=c(1,1,1), col=c("black","red", "blue"), cex=.6, bty="n")
       plot(data$dates, data$Global_reactive_power, type="l", ylab="Global_reactive_power", xlab="datetime")
