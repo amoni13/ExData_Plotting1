@@ -1,4 +1,4 @@
-file<- suppress.Warngings(fread("household_power_consumption.txt", sep=";", na.strings="?", stringsAsFactors=FALSE))
+file<- suppressWarnings(fread("household_power_consumption.txt", sep=";", na.strings="?", stringsAsFactors=FALSE))
     data<-file[file$Date=="1/2/2007",]
       ##1440 Observations
     data<-rbind(data,file[file$Date=="2/2/2007",])
